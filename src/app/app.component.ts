@@ -14,6 +14,10 @@ export class AppComponent {
     this.addArray();
     console.log(this.array);
     // [1, 2, 3]ではなく、[empty, 1, empty, 3, empty, 5]と表示されてしまう
+
+    this.array = [];
+    this.array.length += 5;
+    console.log(this.array); // [empty × 5]
   }
 
   /**
@@ -22,7 +26,7 @@ export class AppComponent {
    * @memberof AppComponent
    */
   public addArray() {
-    let item = ++this.array.length;
-    this.array.push(item);
+    let item = this.array.length;
+    this.array.push(++item);
   }
 }
